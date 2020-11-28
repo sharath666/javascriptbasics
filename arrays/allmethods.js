@@ -148,3 +148,48 @@ let lowerCaseNames = ["sharath", "kumar"]
 
 let captitalCaseNames =  lowerCaseNames.map(item => item.toLocaleUpperCase())
 console.log(captitalCaseNames)
+
+
+/* arr = [1,2,3]
+ arr.indexOf(4)
+ return -1 
+ to check an item in an array using indexOf
+
+ if (arr.indexOf(4) !=-1){
+   console.log(present)
+ }
+ else{
+   console.log( not present)
+ }
+
+includes method returns boolean if present true otherwise false
+
+*/
+
+let arr10 = [1,2,3]
+
+console.log(arr10.includes(2))
+
+let arrayToBeSorted = [1,2,5,6,15]
+
+console.log(arrayToBeSorted.sort()) 
+
+/* working of the sort method
+
+
+*/
+let booleanSort = [ true, "balse"] // string first letter comparsion
+
+console.log( "10" > "15")
+// in the sort method all the elements are convert to strings so the ouput is [1,15,2,5,6]
+console.log(booleanSort.sort())
+
+
+//reverse 
+
+
+let arr14 =  [21,10,12,5,3,12, 1]
+
+console.log(arr14.reverse()) 
+
+//index will be reversed

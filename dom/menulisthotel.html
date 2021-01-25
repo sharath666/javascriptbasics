@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         let items = [{
+                  id:1, name:"dosa", isVeg:true},
+                    { id:2, name:"chicken 65", isVeg:false},
+                  {id:3, name: "idli", isVeg:true},
+                  {id:4, name: "vada", isVeg:true},
+                  {id:5, name: "egg fried rice", isVeg:false},
+                  {id:6, name: "boiled egg", isVeg:false}
+                    ]
+
+        let vegHeaderTag = document.createElement('h2')
+            vegHeaderTag.textContent = "Veg Items"
+            let vegListTag = document.createElement('ul')
+        let NonvegheaderTag = document.createElement ('h2')
+        NonvegheaderTag.textContent = 'Non Veg Items'
+        let nonVegListTag = document.createElement('ul')
+
+        items.forEach(function(fooditem){
+                if (fooditem.isVeg == true){
+                  let   listitemTag = document.createElement('li')
+                  listitemTag.textContent = fooditem.name
+                  vegListTag.appendChild(listitemTag)
+                }
+                else{
+                    let   listitemTag = document.createElement('li')
+                  listitemTag.textContent = fooditem.name
+                  nonVegListTag.appendChild(listitemTag)
+                }
+
+
+        });
+        document.body.appendChild(vegHeaderTag)
+        document.body.appendChild(vegListTag)
+        document.body.appendChild(NonvegheaderTag)
+        document.body.appendChild(nonVegListTag)
+    </script>
+</body>
+</html>

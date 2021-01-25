@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Players List</h1>
+    <script>
+        const names = ["dravid", "ganguly", "sachin", "pujura", "rahane"]
+        
+        let UnorderTag = document.createElement('ul')
+      
+        names.forEach(function(n){
+        let listItem = document.createElement('li')
+        let content = document.createTextNode(n)
+            listItem.appendChild(content)
+            UnorderTag.appendChild(listItem)
+        })
+        document.body.appendChild(UnorderTag)
+    </script>
+</body>
+</html>

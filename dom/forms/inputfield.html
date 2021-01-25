@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="textbox">name</label>
+    <input type="text" id="textbox" name="name">
+
+    <label for="lastName">Last Name</label>
+    <input type="text" id="lastName" name="name">
+
+    <script>
+    let inputHandler = document.getElementById('textbox')
+    let lastNameHandler = document.getElementById('lastName')
+    inputHandler.addEventListener('focus',function(){
+        console.log("you are in input field")
+    })
+    inputHandler.addEventListener('blur',function(){
+        console.log("you have come out of input field")
+    })
+    lastNameHandler.addEventListener('input', function(){
+        console.log(lastNameHandler.value)
+    });
+
+    </script>
+</body>
+</html>

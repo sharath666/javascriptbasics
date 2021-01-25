@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">fetch users</button>
+
+    <script>
+        const buttonHandle = document.getElementById('btn')
+        buttonHandle.addEventListener('click', function(){
+           xhr = new XMLHttpRequest
+           //xhr.open ('httpmethod', url of the server)
+            xhr.open('GET', 'https://jsonplaceholder.typicode.com/users')
+            // open method is used to point which server to hit 
+            xhr.send()
+            //now particular url is hitting which is added in the open method
+            xhr.onload = function(){
+                const users = JSON.parse(xhr.responseText)
+                const ul = document.createElement('ul')
+                users.forEach(element => {
+                 const li = document.createElement('li')
+                    li.textContent = element.email
+                ul.appendChild(li)
+            });
+                document.body.appendChild(ul) 
+            }
+          
+
+            // xhr.onload is called when u receive the response
+        })
+    </script>
+</body>
+</html>

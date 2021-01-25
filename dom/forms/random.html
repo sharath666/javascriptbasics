@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <script>
+            let headerTag = document.createElement('h2')
+            let br = document.createElement('br')
+            let headerContent = document.createTextNode('Generate the Random Number')
+            headerTag.appendChild(headerContent)
+            headerTag.setAttribute('id', 'heading')
+            let btn = document.createElement('button')
+            let btnContent =  document.createTextNode('button')
+            btn.setAttribute('id', 'btn')
+            btn.appendChild(btnContent)
+            document.body.appendChild(headerTag)
+            document.body.appendChild(br)
+            document.body.appendChild(btn)
+            HeadingHandler =  document.getElementById('heading')
+            buttonHandler =  document.getElementById('btn')
+            buttonHandler.addEventListener('click', function(){
+                //two arguments one is the name of the event and another is anonymous
+                randomNumber = Math.round((Math.random() * 100))
+                HeadingHandler.innerHTML = randomNumber
+        });
+     </script>   
+</body>
+</html>

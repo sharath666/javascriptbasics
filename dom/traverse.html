@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Document</title>
+</head>
+<body>
+    <h1> Movies List</h1>    
+
+    <h2>Bahubali</h2>
+
+    <h3>Director</h3>
+    <ul>
+        <li>Rajumoli</li>
+    </ul>
+    <h3>Actors</h3>
+
+    <ul id="actors">
+        
+        <li>Prabhas</li>
+        <li>sweety</li>
+        <li>rana</li>
+    </ul>
+
+    <div id="character">
+        <h3>characters</h3>
+        <p>tom</p>
+        <p>jerry</p>
+        <p>chota bhema</p>
+
+    </div>
+
+    <div>
+        <p>hello world</p>
+    </div>
+    <script>
+        let directname = document.querySelector('h3')
+        console.log(directname)
+        let directors = document.querySelectorAll('li')[0].innerHTML
+        console.log(directors)
+        //using the id reference 
+        const ul = document.getElementById('actors')
+
+        let actors = ul.querySelectorAll('li')
+        console.log(actors)
+        let divid = document.getElementById('character')
+        console.log(divid.querySelectorAll('p'))
+        html = document.documentElement
+        console.log(html.children)
+        let head = html.children[0]
+            console.log(html.children[0])
+            console.log(html.firstElementChild)
+
+        //other way let head = html.firstElementChild
+        let body = html.children[1]
+            console.log(body)
+        console.log(html.lastElementChild)
+        // other way let body = html.lastElementChild
+        console.log('the head childrens', head.children)
+        console.log(' the head children count', head.childElementCount)
+        // other way let head chidren = head.children.count 
+        console.log('the body childrens are ', body.children)
+        console.log('the body childrens count ', body.children.length)
+        console.log(' the parent of body tag', body.parentElement)
+
+        console.log('The first child of body', body.firstElementChild)
+
+        let bodyFirstChild = body.firstElementChild
+            console.log(' the grand parent', bodyFirstChild.parentElement.parentElement)
+            console.log(' the next sibling', bodyFirstChild.nextElementSibling)
+
+        let divTags = document.getElementsByTagName('div')
+            seconddivTag  = divTags[1]
+            console.log('the second div tag children',seconddivTag.children)
+    </script>
+</body>
+</html>

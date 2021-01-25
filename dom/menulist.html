@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Menulist</title>
+    </head>
+    <body>
+        <script>
+              let items = [{
+                  id:1, name:"dosa", isVeg:true},
+                    { id:2, name:"chicken 65", isVeg:false},
+                  {id:3, name: "idli", isVeg:true},
+                  {id:4, name: "vada", isVeg:true},
+                  {id:5, name: "egg fried rice", isVeg:false},
+                  {id:6, name: "boiled egg", isVeg:false}
+              ]
+
+              const vegHeadingTag = document.createElement('h2')
+              vegHeadingTag.textContent = "Veg items"
+              const vegulTag = document.createElement("ul")
+              const nonvegHeadingTag = document.createElement('h2')
+              nonvegHeadingTag.textContent = "Non Veg items"
+              const nonvegulTag = document.createElement("ul")
+            
+            items.forEach(function(item,index){
+                let li = document.createElement('li')
+                console.log(item)
+                if (item.isVeg == true){
+                        console.log(item)
+                    li.textContent = item.name
+
+                    vegulTag.appendChild(li)
+
+            
+                  }
+                  else{
+                     
+                    li.textContent = item.name
+                    nonvegulTag.appendChild(li)
+
+                  }
+            });
+            document.body.appendChild(vegHeadingTag)
+            document.body.appendChild(vegulTag)
+            document.body.appendChild(nonvegHeadingTag)
+            document.body.appendChild(nonvegulTag)
+
+
+        </script>
+    </body>
+</html>

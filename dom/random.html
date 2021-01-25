@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h2 id="heading">Your random number</h2>
+        <button id="btn">Generate</button>
+        <script>
+            const tag = document.getElementById('btn')
+            let heading = document.getElementById('heading')
+
+            tag.addEventListener('click', function(){
+                console.log('the button clicked')
+               randomNumber =  Math.round(Math.random() * 100)
+               console.log(randomNumber)
+                heading.textContent = randomNumber
+            })
+        </script>
+    </body>
+    
+</html>

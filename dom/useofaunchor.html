@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <title>
+    anchor tag 
+</title>
+
+</head>
+<body>
+    <script>
+    let anchorTag = document.createElement('a')
+    let content = document.createTextNode(" visit google")
+    anchorTag.appendChild(content)
+    anchorTag.setAttribute('href', 'https://www.google.com')
+    const br = document.createElement("br")    
+    const tag2 = document.createElement("a")
+    
+                let content1 = document.createTextNode("visit hellworld")
+                tag2.appendChild(content1)
+                tag2.setAttribute("href", "./helloworld.html")
+                document.body.appendChild(anchorTag)
+                document.body.appendChild(br)
+            document.body.appendChild(tag2)
+
+            console.log(anchorTag,tag2)
+</script>
+</body>
+</html>

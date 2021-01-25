@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Fetch Data</button>
+    <script>
+        let buttonHandler = document.getElementById('btn')
+        buttonHandler.addEventListener('click', function(){
+          xhr = new XMLHttpRequest()
+
+          xhr.open('GET', 'https://jsonplaceholder.typicode.com/users')
+          xhr.send()
+
+          xhr.onload = function(){
+             const  users=  JSON.parse(xhr.responseText)
+             const ul = document.createElement('ul')
+             users.forEach(element => {
+                 const li = document.createElement('li')
+                 li.textContent = `${element.email} 
+                 address is ${element.address.street}` 
+                 
+                 ul.appendChild(li)
+             });
+             document.body.appendChild(ul)
+
+          }
+        })
+    </script>
+</body>
+</html>

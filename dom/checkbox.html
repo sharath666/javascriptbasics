@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let checkboxTag = document.createElement('input')
+    checkboxTag.setAttribute('type', 'checkbox')
+    checkboxTag.setAttribute('id', 'veg')
+    console.log(checkboxTag)
+
+    document.body.appendChild(checkboxTag)
+
+    checkboxHandler = document.getElementById('veg')
+    checkboxHandler.addEventListener('click', function(){
+        console.log("hi")
+    })
+    </script>
+</body>
+</html>

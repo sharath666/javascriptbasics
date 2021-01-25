@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="place" />
+
+    <h2 id="heading">places</h2>
+   <p class="place">Hutti</p>
+   <p class="place">Kodmur</p>
+   <p class="place">PalaKad</p>
+    <p class="place">Davangere</p>
+    <script>
+        let places = document.getElementsByClassName('place')
+        console.log(places[0])
+        //non-iterable 
+        console.log(Array.from(places))
+        let southPlaces = Array.from(places)
+        // Array from converts to a primitive array
+        // the return type of document.getElementByClassName is an array
+        console.log(document.getElementsByTagName('p'))
+        let heading = document.querySelector('#heading')
+        console.log(heading)
+        // # sign represents id of the tag
+        console.log(heading.value)
+        let indianPlaces = document.querySelectorAll('p')
+        //.represent class followed by the name
+        console.log(indianPlaces[0]) 
+        southPlaces.forEach(function(place){
+            console.log(place.innerHTML)
+        })
+
+        let inputHandler = document.getElementById('place')
+
+        let input = document.querySelector('#place')
+
+        // input.addEventListener('input', function(){
+        //     console.log(input.value)
+        // });
+
+        inputHandler.addEventListener('input', function(){
+            console.log(input.value)
+        });
+
+    </script>
+</body>
+</html>

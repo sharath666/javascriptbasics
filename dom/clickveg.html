@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title> Menu List </title>
+</head>
+<body>
+    <input type="checkbox" id="veg" name="checkbox" value="check">
+    <label for="Vegonly"> Veg Only</label><br />
+    <script>
+          let items = [{
+                  id:1, name:"dosa", isVeg:true},
+                    { id:2, name:"chicken 65", isVeg:false},
+                  {id:3, name: "idli", isVeg:true},
+                  {id:4, name: "vada", isVeg:true},
+                  {id:5, name: "egg fried rice", isVeg:false},
+                  {id:6, name: "boiled egg", isVeg:false}
+              ]
+              const vegHeadingTag = document.createElement('h2')
+              vegHeadingTag.textContent = "items"
+              const divTag= document.getElementById('div')
+                console.log(divTag)
+              const vegulTag = document.createElement("ul")
+              items.forEach(function(item,index){
+                let li = document.createElement('li')
+                console.log(item)
+            
+                    li.textContent = item.name
+
+                    vegulTag.appendChild(li)
+
+            
+              });
+            divTag.appendChild(vegulTag)
+              document.body.appendChild(vegHeadingTag)
+             
+         
+
+              vegHandle = document.getElementById('veg')
+
+              vegHandle.addEventListener('click', function(){
+                if (vegHandle.checked){
+
+                }
+              });
+       
+    </script>
+</body>
+</html>

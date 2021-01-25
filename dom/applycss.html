@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myForm">
+    <label>Title
+    <input type="text" id="title" /><br />
+    <span id="titleValid"></span> <br />
+    <input type="submit" />
+</form>
+</label>
+
+<script>
+    const titleHandle = document.querySelector('#title')
+    const formHandle = document.querySelector('#myForm')
+    const spanHandle = document.querySelector('#titleValid')
+    formHandle.addEventListener('submit', function(event){
+        event.preventDefault()
+        if (titleHandle.value == ""){
+            console.log("title")
+            spanHandle.textContent = "title is required"
+            spanHandle.style.color = 'red'
+        }
+        
+        if (titleHandle.value == ""){
+            spanHandle.textContent = "title is required"
+            spanHandle.style.color = 'red'
+            
+        }
+        else{
+            spanHandle.style.display = "none"
+        }
+
+    })
+
+</script>
+</body>
+</html>

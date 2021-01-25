@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Menulist</title>
+    </head>
+    <body>
+        <script>
+              let items = [{
+                  id:1, name:"dosa", isVeg:true},
+                    { id:2, name:"chicken 65", isVeg:false},
+                  {id:3, name: "idli", isVeg:true},
+                  {id:4, name: "vada", isVeg:true},
+                  {id:5, name: "egg fried rice", isVeg:false},
+                  {id:6, name: "boiled egg", isVeg:false}
+              ]
+
+              const HeadingTag = document.createElement('h2')
+              HeadingTag.textContent = "Menu items"
+              const ulTag = document.createElement("ul")
+              ulTag.setAttribute('id', "allitems")
+              const nonvegHeadingTag = document.createElement('h2')
+                let labelTag = document.createElement('label')
+                labelTag.textContent = "Veg Only"
+                
+              const checkBoxTag = document.createElement('input')
+                checkBoxTag.setAttribute('type', 'checkbox')
+                checkBoxTag.setAttribute('id', 'veg')
+              
+            items.forEach(function(item,index){
+                let li = document.createElement('li')   
+                    li.textContent = item.name
+                   ulTag.appendChild(li)
+            });
+            document.body.appendChild(labelTag)
+            document.body.appendChild(checkBoxTag)
+            document.body.appendChild(HeadingTag)
+            document.body.appendChild(ulTag)
+            let checkboxHandler = document.getElementById('veg')
+            checkboxHandler.addEventListener('click', function(){
+
+            if (checkboxHandler.checked == true){
+            let  ulHandler = document.getElementById('allitems')
+            let menu_items = ulHandler.childNodes
+            //console.log(menu_items)
+            
+                for(let i=0; i<menu_items.length;i++){
+                items.forEach(function(item){
+                        debugger
+                    if (menu_items[i].innerText == item.name &&item.isVeg == false ){
+                        console.log(menu_items[i])
+                        ulHandler.removeChild(menu_items[i])
+                    }
+                    
+                });
+            }
+            }
+            else if(checkboxHandler.checked == false){
+                let  ulHandler = document.getElementById('allitems')
+            let menu_items = ulHandler.childNodes
+            
+                    items.forEach(function(item){
+                        if (item.isVeg == false ){
+                            let listItem = document.createElement('li')
+                            listItem.textContent = item.name
+                            ulHandler.appendChild(listItem)
+                        }
+                    });
+                
+            }
+            });
+            
+
+           
+        </script>
+    </body>
+</html>

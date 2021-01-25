@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Count</title>
+</head>
+<body>
+    <h2>The Word Count</h2> 
+    <textarea id="english" name="name"></textarea>
+    <p>You have written <span id="wordcount"></span> words and <span id="charactercount"></span> characters</p>
+
+    <script>
+        textHandler = document.getElementById('english')
+        wordHandler = document.getElementById('wordcount')
+        characterHandler = document.getElementById('charactercount')
+        textHandler.addEventListener('input', function(){
+         let sentance = textHandler.value 
+         let characterLength = sentance.length  
+         let wordLength = sentance.split(" ").length
+            if (textHandler.value == ""){
+                wordHandler.innerHTML =0
+            }
+            else{
+            wordHandler.innerHTML = wordLength
+            }
+
+            characterHandler.innerHTML = characterLength
+        })
+    </script>
+</body>
+</html>

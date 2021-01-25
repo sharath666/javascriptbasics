@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       let headerTag = document.createElement('h2')
+       let headerContent = document.createTextNode('the list of places to visit in Bangalore')
+       headerTag.appendChild(headerContent)
+       let unOrderedTag = document.createElement('ul')
+       let listItem1 = document.createElement('li')
+        let Content1 = document.createTextNode('MG Road') 
+        listItem1.appendChild(Content1)
+        let listItem2 = document.createElement('li')
+        let Content2 = document.createTextNode('LalBagh')
+        listItem2.appendChild(Content2)
+        let listItem3 = document.createElement('li')
+        let Content3 = document.createTextNode('LalBagh')
+        listItem3.appendChild(Content3)  
+        unOrderedTag.appendChild(listItem1)
+        unOrderedTag.appendChild(listItem2)
+        unOrderedTag.appendChild(listItem3)
+        document.body.appendChild(headerTag)
+        document.body.appendChild(unOrderedTag)
+   </script> 
+</body>
+</html>

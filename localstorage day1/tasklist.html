@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+</head>
+<body>
+      
+    <h2>My Task List</h2>
+    <ul id="tasklist">
+
+    </ul>
+
+    <h3>Task Form</h3>
+    <form id="myForm">
+        <label>Title</label>
+    <input type="text" name="title"  id="title"/>
+    <br /><br />
+
+    <label>
+        isCompleted
+        <input type="checkbox" name="isCompleted" id="status" />
+    </label>
+    <br /><br />
+    <input type="submit" value="Add" />
+
+    </form>
+
+    <script>
+        //  today's class we will seeing how to store an array or an object inside the localstorage
+        //localStorage can only store string elements 
+        // localStorage.clear() clears the localstorage of that domain
+        // names = {}
+        // names.firstName = "sachin"
+        // names.lastName = "nagalikar"
+        // names.userName = "sachin"
+        // names.username = "sachin100"
+        // console.log(names)
+        // once the user close the browser window the sessionStorage will get cleared
+
+        localDB  = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : []
+        function liMaker(task){
+            let li = document.createElement('li')
+            li.innerHTML = `<input type="checkbox" ${task.isCompleted ? 'checked': ''} />${task.title}` 
+        listHandle.appendChild(li)
+        }
+
+        const taskFormHandle = document.getElementById('myForm')
+        const titleHandle = document.getElementById('title')
+        const statusHandle = document.getElementById('status')
+        const listHandle = document.getElementById('tasklist')
+
+  
+        taskFormHandle.addEventListener('submit', function(event){
+            event.preventDefault();
+            console.log(event) 
+            let task = {
+                title:titleHandle.value,
+                isCompleted: statusHandle.checked
+            }
+
+          
+            localDB.push(task)
+
+       localStorage.setItem('tasks', JSON.stringify(localDB))
+
+            liMaker(task)
+
+            taskFormHandle.reset();           
+        })
+
+        localDB.forEach(function(task){
+            liMaker(task)
+
+});
+
+    </script>
+</body>
+</html>

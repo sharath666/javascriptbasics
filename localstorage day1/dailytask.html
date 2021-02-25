@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+</head>
+<body>
+    <h2>The Task List</h2>
+    <ul id="tasklist">
+
+    </ul>
+    <form id="myForm">
+    <label>Task title 
+        <input type="text" name="title" id="title" />
+    </label>
+    <br /><br />
+    <label> isCompleted
+    <input type="checkbox" name="isCompleted" id="isCompleted" />
+</label><br /><br />
+    <input type="submit" value="Add task" />
+</form>
+
+<script>
+    let taskHandle = document.getElementById('myForm')
+    let titleHandle= document.getElementById('title')
+    let statusHandle = document.getElementById('isCompleted')
+    let listHandle = document.getElementById('tasklist')
+   // let localDB = localStorage.getItem('tasks', )
+   let localDB = localStorage.getItem('tasks')? JSON.parse(localStorage.getItem('tasks')): []
+
+   function liMaker(task){
+    let li = document.createElement('li')
+        li.innerHTML = `<input type="checkbox" ${task.isCompleted ? 'checked' : ''} />${task.title}`
+        listHandle.appendChild(li)
+   }
+    taskHandle.addEventListener('submit',function(event){
+        event.preventDefault();
+      
+        // console.log(titleHandle.value)
+        // console.log(statusHandle.checked)
+        task = {}
+        task.title = titleHandle.value
+        task.isCompleted = statusHandle.checked
+        console.log(task)
+
+        localDB.push(task)
+        localStorage.setItem('tasks', JSON.stringify(localDB))
+        liMaker(task)
+       taskHandle.reset();
+    });
+
+    localDB.forEach(function(task){
+        liMaker(task)
+        })
+
+</script>
+</body>
+</html>

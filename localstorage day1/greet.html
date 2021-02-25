@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> Hello, <span id="name"></span></h2>
+
+    <button onclick="handleClick()">
+        Enter Name
+    </button>
+    <button onclick="clearStorage()">
+        Clear Storage
+    </button>
+    <script>
+        const nameHandle = document.getElementById('name')
+        const btnHandle = document.getElementById('btn')
+        let username;
+
+        function handleClick(){
+            username = prompt('enter your name')
+            console.log(username)
+            localStorage.setItem('name', username)
+            nameHandle.innerText = localStorage.getItem('name')
+
+        }
+
+        function clearStorage(){
+            localStorage.removeItem('name')
+            nameHandle.innerText = localStorage.getItem()
+        }
+
+        nameHandle.innerText = localStorage.getItem('name')
+
+    </script>
+</body>
+</html>

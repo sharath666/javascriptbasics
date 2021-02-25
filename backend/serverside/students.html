@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myForm">
+        <label>Name</label>
+        <input type="text" name="name" id="name" />
+        <br /><br />
+        <label>Place</label>
+        <input type="text" name="place" />
+       <input type="submit" value="submit" />
+    </form>
+    <script>
+        let formHandle = document.getElementById('myForm')
+
+        formHandle.addEventListener('submit', function(event){
+            console.log(event.target.place.value)
+            event.preventDefault()
+            console.log(event)
+        })
+
+        //es5 feature
+
+        // fetch('http://localhost:3000/students')
+        // .then(function(response){
+        //     return response.json() // to get the json from the http response will be use .json()
+        // }).then(function(data){
+        //     console.log(data)
+        // })
+
+
+        fetch('http://localhost:3000/students') //return a promise  
+        .then(function(response){ //.then for successfull response
+            return response.json()
+        }).then(function(data){
+            console.log( data)
+        })
+
+        // fetch('http://localhost:3000/students')
+        //     .then(response=>response.json())
+        //     .then(data=>console.log(data))
+        //es6 feature 
+
+        // fetch('http://localhost:3000/students')
+        // .then(response => response.json())
+        // .then (data => console.log(data))
+
+        //post method 
+
+
+        fetch('http://localhost:3000/students',{
+            method:'POST',
+            body:JSON.stringify({
+                id:4,
+                name:"sharath",
+                place:"raichur"
+            }),
+            headers:{"CONTENT-TYPE":"application/json"}
+
+        })
+        
+        //http response body json
+        .then(response =>response.json())
+        .then(data=> console.log(data))
+        // fetch('http://localhost:3000/students',{
+        //     method:'POST',
+        //     body:JSON.stringify({
+        //         id:5,
+        //         name:"vinesh"
+        //     }),
+        //     headers: {"CONTENT-TYPE": "application/json"}
+        // })
+        // .then(response =>response.json())
+        // .then(data =>console.log(data))
+    </script>
+</body>
+</html>

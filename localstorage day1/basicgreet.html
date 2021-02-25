@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Hello, <span id="name"></span></h2>
+    <button id="btn" onclick="handleClick()">Enter Name</button>
+    <button id="clr" onclick="clearStorage()">clear</button>
+    <button onclick="myFunction()">Try it</button>
+
+    <script>
+        // localStorage we will used to save particular which we need even if the window and browser has been closed from the system 
+
+        const nameHandle = document.getElementById('name')
+        const btnHandle = document.getElementById('btn')
+        let username;
+        function handleClick()
+        {
+            username = prompt("enter your name")
+            localStorage.setItem('name', username)
+            //anything u want add to localstorage u will setItem 
+            nameHandle.innerText = localStorage.getItem('name')
+
+        }
+
+//         function myFunction() {
+//   setInterval(function(){ 
+//       console.log(new Date())
+//    }, 1000);
+// }
+
+        function clearStorage(){
+            localStorage.removeItem('name')
+            nameHandle.innerText = localStorage.getItem('name')
+        }
+        nameHandle.innerText = localStorage.getItem('name')
+            
+    </script>
+</body>
+</html>

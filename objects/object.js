@@ -42,3 +42,32 @@ console.log(user)
 console.log(user.age === undefined)
 
 //other way  in operator
+
+
+
+// let promise = new Promise()
+//  promise =(a)=>{
+//     a.map( item => item > 0 ? item: "not a positve number")
+// }
+// promise.then(
+//     (message)=>{
+//         console.log("resolve:" + message)
+//     },
+//     (message) => { 
+//         console.log("Then failure:" + message); 
+//       } 
+
+// )
+
+// console.log(promise([-1,-2]))
+
+
+function reverseNumber(number) {
+    var revNumber = 0;
+    while (number > 0) {
+      revNumber = (revNumber * 10) + (number % 10);
+      number = Math.floor(number / 10);
+    }
+    return revNumber;
+  }
+  console.log(reverseNumber(8706))

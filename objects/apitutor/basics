@@ -1,0 +1,8 @@
+// to communicate between one application to other application apis are used 
+
+
+rest apis
+get  to fetch the data 
+post to insert the data 
+patch or put to update the data
+delete to delete the data

@@ -10,3 +10,7 @@ for(let item in user){
 }
 
 // basic iteration of object 
+
+
+let str  = 'sharath has new  ki id iasdid'
+console.log(str.indexOf('id',21))
